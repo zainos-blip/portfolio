@@ -1,0 +1,24 @@
+# Virtual environment
+.venv/
+
+# Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+app.log
+
+# Dependencies
+requirements.txt
+
+# Editor & OS-specific files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Vercel deployment
+.vercel/

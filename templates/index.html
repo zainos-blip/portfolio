@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Resume</title>
+    
+    <!-- Our modules -->
+    <script src="/static/js/utils.js" type="module" defer></script>
+    <script src="/static/js/main.js" type="module" defer></script>
+
+    <!-- Tailwind via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Import fonts for that retro vibe */
+      @import url('https://fonts.googleapis.com/css2?family=VT323&family=Ubuntu+Mono&display=swap'); 
+
+      /* Use our retro fonts */
+      body {
+        font-family: 'VT323', 'Ubuntu Mono', monospace;
+      }
+
+      /* Fallback animated retro grid background using CSS gradients */
+      .animated-bg {
+        background-color: #0C1021; /* Dark blue background */
+        background-image:
+          linear-gradient(90deg, rgba(0,255,0,0.2) 1px, transparent 1px),
+          linear-gradient(rgba(0,255,0,0.2) 1px, transparent 1px);
+        background-size: 20px 20px;
+        animation: bgAnimation 30s linear infinite;
+      }
+
+      @keyframes bgAnimation {
+        0% { background-position: 0 0; }
+        50% { background-position: 10px 10px; }
+        100% { background-position: 0 0; }
+      }
+
+      /* Pixelated assembling effect for the terminal container */
+      .assemble {
+        animation: pixelate-assemble 1.5s steps(10) forwards;
+      }
+
+      @keyframes pixelate-assemble {
+        0% {
+          transform: scale(0.5);
+          opacity: 0;
+          filter: blur(5px);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+          filter: blur(0);
+        }
+      }
+
+      /* Glowing effect for the terminal container */
+      #terminalContainer {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.6), 0 0 20px rgba(0, 255, 0, 0.4), 0 0 30px rgba(0, 255, 0, 0.2);
+      }
+
+      /* Terminal styling with custom scrollbar */
+      #terminal {
+        overflow-y: auto; /* Allow vertical scrolling */
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE 10+ */
+        background: #0C1021; 
+        color: #3B78FF;
+        height: 800px;
+        padding: 16px;
+        border-radius: 8px;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        white-space: pre-wrap;
+      }
+
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      #terminal::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      #terminal::-webkit-scrollbar-thumb {
+        background: rgba(0, 255, 0, 0.6);
+        border-radius: 4px;
+      }
+
+      #terminal::-webkit-scrollbar-track {
+        background: rgba(0, 0, 0, 0.2);
+      }
+    </style>
+  </head>
+  <body class="animated-bg bg-black text-green-400 p-6">
+    <!-- Terminal container with glowing borders and pixelated assembling animation -->
+    <div
+      id="terminalContainer"
+      class="max-w-7xl mx-auto border-2 border-green-400 rounded-lg p-8 shadow-2xl ring-4 ring-green-400 ring-opacity-50 assemble"
+      style="background: rgba(0, 0, 0, 0.85);"
+    >
+      <!-- Terminal display area -->
+      <div id="terminal"></div>
+      
+      <!-- Command input area -->
+      <div id="cmdContainer" class="flex items-center mt-4">
+        <span id="cmdDollar" class="text-white text-xl mr-2">$</span> 
+        <input
+          id="cmdInput"
+          type="text"
+          autofocus
+          class="flex-grow bg-transparent border-none outline-none text-white text-xl caret-white" 
+        />
+      </div>
+    </div>
+
+    <script>
+      // Focus the input field when the terminal container is clicked
+      const terminalContainer = document.getElementById('terminalContainer');
+      const cmdInput = document.getElementById('cmdInput');
+      const terminal = document.getElementById("terminal");
+
+      terminalContainer.addEventListener('click', () => {
+        cmdInput.focus();
+      });
+
+      // MutationObserver: Whenever the terminal's content changes, scroll to the bottom.
+      const observer = new MutationObserver(() => {
+        terminal.scrollTop = terminal.scrollHeight;
+      });
+
+      // Observe changes to the terminal's children and subtree.
+      observer.observe(terminal, { childList: true, subtree: true });
+    </script>
+  </body>
+</html>
