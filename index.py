@@ -3,8 +3,16 @@
 from flask import Flask, request, render_template, jsonify
 from flask_limiter import Limiter
 from flask_talisman import Talisman
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+
+# For Vercel deployment
+app = app
 
 csp = {
     'default-src': "'self'",
@@ -141,5 +149,6 @@ def run_command(cmd):
     output = commands.get(cmd, "Command not found. Type 'help' for a list of commands.")
     return jsonify({'output': output})
 
+
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

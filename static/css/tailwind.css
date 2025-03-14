@@ -1,0 +1,158 @@
+/* Basic responsive styles for the terminal interface */
+
+/* Base styles */
+body {
+    font-family: 'VT323', 'Ubuntu Mono', monospace;
+    background-color: #0C1021;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Terminal container */
+#terminalContainer {
+    width: 90%;
+    max-width: 1000px;
+    height: 85vh;
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #4CAF50;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+/* Terminal display area */
+#terminal {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    background: #0C1021;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    white-space: pre-wrap;
+}
+
+/* Command input area */
+#cmdContainer {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-top: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+#cmdDollar {
+    color: #4CAF50;
+    margin-right: 0.75rem;
+    font-size: 1.5rem;
+}
+
+#cmdInput {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    font-family: inherit;
+    outline: none;
+}
+
+/* Custom scrollbar */
+#terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+#terminal::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#terminal::-webkit-scrollbar-thumb {
+    background: rgba(76, 175, 80, 0.6);
+    border-radius: 4px;
+}
+
+/* Desktop styles (default) */
+@media (min-width: 1024px) {
+    #terminalContainer {
+        width: 85%;
+        max-width: 1200px;
+        height: 80vh;
+        padding: 2.5rem;
+    }
+
+    #terminal {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding: 2rem;
+    }
+
+    #cmdInput, #cmdDollar {
+        font-size: 1.5rem;
+    }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #terminalContainer {
+        width: 90%;
+        max-width: 900px;
+        height: 85vh;
+        padding: 2rem;
+    }
+
+    #terminal {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        padding: 1.5rem;
+    }
+
+    #cmdInput, #cmdDollar {
+        font-size: 1.25rem;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    #terminalContainer {
+        width: 95%;
+        height: 90vh;
+        padding: 1rem;
+    }
+
+    #terminal {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        padding: 1rem;
+    }
+
+    #cmdInput, #cmdDollar {
+        font-size: 1rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+    #terminalContainer {
+        width: 100%;
+        height: 95vh;
+        padding: 0.75rem;
+    }
+
+    #terminal {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        padding: 0.75rem;
+    }
+
+    #cmdInput, #cmdDollar {
+        font-size: 0.875rem;
+    }
+} 

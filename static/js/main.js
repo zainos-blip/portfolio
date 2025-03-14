@@ -47,6 +47,7 @@ async function animateDollar() {
 // Set up the input listener for commands
 function setupInput() {
   const input = document.getElementById("cmdInput");
+  const terminal = document.getElementById("terminal");
 
   input.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
@@ -71,26 +72,112 @@ async function executeCommand(cmd) {
     return;
   }
 
-  fetch(`/command/${cmd}`)
-    .then((response) => response.json())
-    .then((data) => {
-      addToTerminal(
-        document.getElementById("terminal"),
-        cmd,
-        formatText(data.output)
-      );
-    })
-    .catch((error) => console.error("Error:", error));
+  try {
+    const response = await fetch(`/command/${cmd}`);
+    const data = await response.json();
+    addToTerminal(
+      document.getElementById("terminal"),
+      cmd,
+      data.output
+    );
+  } catch (error) {
+    console.error("Error:", error);
+    addToTerminal(
+      document.getElementById("terminal"),
+      cmd,
+      "Error executing command. Please try again."
+    );
+  }
 }
 
-// Wait for the terminal container's "assemble" animation to finish, then animate the text.
+// Initialize the terminal when the page loads
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("terminalContainer");
+  const terminal = document.getElementById("terminal");
 
   // When the container finishes its animation, animate the text and dollar sign.
   container.addEventListener("animationend", async () => {
     await Promise.all([animateTerminalIntro(), animateDollar()]);
     setupInput();
   });
+
+  // Auto-scroll when content changes
+  const observer = new MutationObserver(() => {
+    terminal.scrollTop = terminal.scrollHeight;
+  });
+  observer.observe(terminal, { childList: true, subtree: true });
+});
+
+// Main JavaScript for the portfolio terminal
+
+document.addEventListener('DOMContentLoaded', () => {
+    const terminalInput = document.getElementById('terminal-input');
+    const terminalContent = document.querySelector('.terminal-content');
+    
+    // Focus the input when clicking anywhere in the terminal
+    document.querySelector('.terminal').addEventListener('click', () => {
+        terminalInput.focus();
+    });
+    
+    // Handle terminal commands
+    terminalInput.addEventListener('keydown', async (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            
+            const command = terminalInput.value.trim().toLowerCase();
+            terminalInput.value = '';
+            
+            // Display the command
+            const commandLine = document.createElement('div');
+            commandLine.innerHTML = `<span class="prompt">visitor@portfolio:~$</span> ${command}`;
+            terminalContent.appendChild(commandLine);
+            
+            // Process commands
+            if (command) {
+                try {
+                    const response = await fetch(`/command/${command}`);
+                    const data = await response.json();
+                    
+                    // Create output element
+                    const outputElement = document.createElement('div');
+                    outputElement.classList.add('command-output');
+                    outputElement.innerHTML = data.output.replace(/\n/g, '<br>');
+                    
+                    // Special handling for 'cls' command
+                    if (command === 'cls') {
+                        terminalContent.innerHTML = '';
+                        return;
+                    }
+                    
+                    // Add the output to the terminal
+                    terminalContent.appendChild(outputElement);
+                } catch (error) {
+                    // Handle error
+                    const errorElement = document.createElement('div');
+                    errorElement.classList.add('command-output', 'error');
+                    errorElement.textContent = "Command not found. Type 'help' for a list of commands";
+                    terminalContent.appendChild(errorElement);
+                }
+            }
+            
+            // Scroll to the bottom
+            terminalContent.scrollTop = terminalContent.scrollHeight;
+        }
+    });
+    
+    // Auto-focus the input on page load
+    terminalInput.focus();
+    
+    // Display welcome message
+    if (terminalContent.children.length === 0) {
+        const welcomeMsg = document.createElement('div');
+        welcomeMsg.innerHTML = `
+            <div class="welcome-message">
+                <h1>Welcome to Zain Rashid's Portfolio Terminal</h1>
+                <p>Type <strong>'help'</strong> to see available commands</p>
+            </div>
+        `;
+        terminalContent.appendChild(welcomeMsg);
+    }
 });
 
