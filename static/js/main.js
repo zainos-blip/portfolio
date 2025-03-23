@@ -75,18 +75,33 @@ async function executeCommand(cmd) {
   try {
     const response = await fetch(`/command/${cmd}`);
     const data = await response.json();
-    addToTerminal(
-      document.getElementById("terminal"),
+    const terminal = document.getElementById("terminal");
+    
+    // Add the new content and get a reference to the command line added
+    const elements = addToTerminal(
+      terminal,
       cmd,
       data.output
     );
+    
+    // Scroll the command line into view
+    if (elements && elements.cmdLine) {
+      elements.cmdLine.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
   } catch (error) {
     console.error("Error:", error);
-    addToTerminal(
-      document.getElementById("terminal"),
+    const terminal = document.getElementById("terminal");
+    
+    const elements = addToTerminal(
+      terminal,
       cmd,
       "Error executing command. Please try again."
     );
+    
+    // Scroll the command line into view
+    if (elements && elements.cmdLine) {
+      elements.cmdLine.scrollIntoView({ behavior: 'auto', block: 'start' });
+    }
   }
 }
 
@@ -100,12 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     await Promise.all([animateTerminalIntro(), animateDollar()]);
     setupInput();
   });
-
-  // Auto-scroll when content changes
-  const observer = new MutationObserver(() => {
-    terminal.scrollTop = terminal.scrollHeight;
-  });
-  observer.observe(terminal, { childList: true, subtree: true });
 });
 
 // Main JavaScript for the portfolio terminal
@@ -151,17 +160,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Add the output to the terminal
                     terminalContent.appendChild(outputElement);
+                    
+                    // Scroll to the command line
+                    commandLine.scrollIntoView({ behavior: 'auto', block: 'start' });
                 } catch (error) {
                     // Handle error
                     const errorElement = document.createElement('div');
                     errorElement.classList.add('command-output', 'error');
                     errorElement.textContent = "Command not found. Type 'help' for a list of commands";
                     terminalContent.appendChild(errorElement);
+                    
+                    // Scroll to the command line
+                    commandLine.scrollIntoView({ behavior: 'auto', block: 'start' });
                 }
             }
-            
-            // Scroll to the bottom
-            terminalContent.scrollTop = terminalContent.scrollHeight;
         }
     });
     

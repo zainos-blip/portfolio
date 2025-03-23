@@ -18,9 +18,9 @@ export function formatText(text) {
     // Add spacing
     const spacer = document.createElement('br');
     terminal.appendChild(spacer);
-
-    // Scroll to bottom
-    terminal.scrollTop = terminal.scrollHeight;
+    
+    // Return references to the elements we created
+    return { cmdLine, outputLine, spacer };
   }
   
   // Utility functions for the portfolio site

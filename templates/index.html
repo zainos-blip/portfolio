@@ -120,14 +120,6 @@
       terminalContainer.addEventListener('click', () => {
         cmdInput.focus();
       });
-
-      // MutationObserver: Whenever the terminal's content changes, scroll to the bottom.
-      const observer = new MutationObserver(() => {
-        terminal.scrollTop = terminal.scrollHeight;
-      });
-
-      // Observe changes to the terminal's children and subtree.
-      observer.observe(terminal, { childList: true, subtree: true });
     </script>
   </body>
 </html>
