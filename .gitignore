@@ -10,8 +10,6 @@ __pycache__/
 # Logs
 app.log
 
-# Dependencies
-requirements.txt
 
 # Editor & OS-specific files
 .vscode/
