@@ -56,14 +56,14 @@ commands = {
 ║               🚀 ABOUT ME                ║
 ╚══════════════════════════════════════════╝
 Hello! I'm Zain Rashid, a Cybersecurity student at Air University 
-Islamabad. I specialize in Network & Web security analysis and 
-IT infrastructure maintenance. My passion is uncovering 
-vulnerabilities and strengthening digital security. 
+Islamabad. I specialize in Network & Web security analysis with networking
+infrastructure. My passion is uncovering vulnerabilities and strengthening digital security. 
 
 🎯 Interests:
+- SIEM & SOAR
 - Network & Web Security
-- Graphic Design & AI-assisted Creativity
-- Photography & Videography
+- Low level Networking and automations in Python
+- Photography & Videography alongside Graphic Design
 
 ⚡ Let’s secure the digital world together! ⚡
 """,
@@ -80,7 +80,7 @@ vulnerabilities and strengthening digital security.
    - Metasploit | beEF | BurpSuite | 
 
 📌 Tools & Platforms:
-   - Git | AI Prompting | VSCode | Photoshop | Capcut
+   - Git | AI Prompting (Mostly Grok or DeepSeek) | CursorAI IDE | Photoshop | 
 
 📌 Soft Skills:
    - Team Player 🤝 | Effective Communicator 🗣️
@@ -103,9 +103,13 @@ vulnerabilities and strengthening digital security.
 🔹 Notable Projects:
    ✅ HTTP Proxy made in python using 'mitmproxy' which is used to monitor HTTP requests and responses,
       which is then filtered and showed via a website for frontend of the logs.    
+
    ✅ Python Process Manager using 'psutil' library
+   
    ✅ Researched & tested Browser Exploitation Framework (beEF)
+   
    ✅ Web Scraper in python using 'playwright' library and making a web page for the scraped data
+   
    ✅ Made this portfolio website using flask and implemented web security features such as: 
       -> CSP
       (Content Security Policy) which prevents XSS and loads what is in the self domain or the provided
