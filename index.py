@@ -74,7 +74,7 @@ My focus is on strengthening digital systems through advanced attack simulation 
               🛠️ TECHNICAL SKILLS        
 ╚════════════════════════════════════╝
 📌 Programming Languages:
-   - C | C++ | Python | Javascript  
+   - C | C++ | Python | Javascript | MySQL | PostgreSQL
 
 📌 Offensive Security & Networking:
    - Kali Linux | Nmap | Wireshark | BurpSuite
