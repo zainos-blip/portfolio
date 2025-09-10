@@ -48,9 +48,9 @@ commands = {
 │ experience → Work & CTFs     
 │ contact    → Get in touch   
 │ cls        → Clear screen
-|    
-|  NOTE: U CAN SCROLL UP &
-|    DOWN WITH UR CURSOR
+│    
+│   NOTE: U CAN SCROLL UP &
+│     DOWN WITH UR CURSOR
 └────────────────────────────
 """,
 
