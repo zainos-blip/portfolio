@@ -39,21 +39,21 @@ limiter.init_app(app)
 commands = {
     "help": """ 
 ╔════════════════════════════╗
-║   🔹 AVAILABLE COMMANDS 🔹 
+   🔹 AVAILABLE COMMANDS 🔹 
 ╚════════════════════════════╝
-┌────────────────────────────┐
-│ help       → Show commands        | 
-│ about      → About me             | 
-│ skills     → My skillset          | 
-│ experience → Work & CTFs          |  
-│ contact    → Get in touch         | 
-│ cls        → Clear screen         | 
-└────────────────────────────┘
+┌────────────────────────────
+│ help       → Show commands  
+│ about      → About me       
+│ skills     → My skillset    
+│ experience → Work & CTFs     
+│ contact    → Get in touch   
+│ cls        → Clear screen   
+└────────────────────────────
 """,
 
     "about": """ 
 ╔══════════════════════════════════════════╗
-║               🚀 ABOUT ME                ║
+               🚀 ABOUT ME                
 ╚══════════════════════════════════════════╝
 Hello! I'm Zain Rashid, a Cybersecurity student at Air University, Islamabad.
 I specialize in offensive security, with expertise in identifying and exploiting vulnerabilities.
@@ -71,7 +71,7 @@ My focus is on strengthening digital systems through advanced attack simulation 
 
     "skills": """ 
 ╔════════════════════════════════════╗
-║         🛠️ TECHNICAL SKILLS        ║
+        🛠️ TECHNICAL SKILLS        
 ╚════════════════════════════════════╝
 📌 Programming Languages:
    - C | C++ | Python | Javascript  
@@ -91,7 +91,7 @@ My focus is on strengthening digital systems through advanced attack simulation 
 
     "experience": """ 
 ╔══════════════════════════════════════════╗
-║           🎯 EXPERIENCE & PROJECTS       ║
+         🎯 EXPERIENCE & PROJECTS      
 ╚══════════════════════════════════════════╝
 🔹 Internship:
    🏢 IT Intern @ Pearl Continental Hotel, Rawalpindi
@@ -126,7 +126,7 @@ My focus is on strengthening digital systems through advanced attack simulation 
 
     "contact": """ 
 ╔══════════════════════════════════════════╗
-║              📞 CONTACT ME               ║
+              📞 CONTACT ME               
 ╚══════════════════════════════════════════╝
 📧 Email: zain.rashid2004@gmail.com
 🔗 LinkedIn: linkedin.com/in/zainrashid04/
