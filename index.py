@@ -51,6 +51,7 @@ commands = {
 │    
 │   NOTE: U CAN SCROLL UP &
 │     DOWN WITH UR CURSOR
+│       IN THE TERMINAL
 └────────────────────────────
 """,
 
