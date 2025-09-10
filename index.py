@@ -42,12 +42,12 @@ commands = {
 ║   🔹 AVAILABLE COMMANDS 🔹 
 ╚════════════════════════════╝
 ┌────────────────────────────┐
-│ help      → Show commands  
-│ about     → About me       
-│ skills    → My skillset    
-│experience → Work & CTFs     
-│ contact   → Get in touch   
-│ cls       → Clear screen   
+│ help       → Show commands | 
+│ about      → About me      | 
+│ skills     → My skillset   | 
+│ experience → Work & CTFs   |  
+│ contact    → Get in touch  | 
+│ cls        → Clear screen  | 
 └────────────────────────────┘
 """,
 
