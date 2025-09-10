@@ -45,7 +45,7 @@ commands = {
 │ help      → Show commands  │
 │ about     → About me       │
 │ skills    → My skillset    │
-│experience → Work & CTFs    │
+│ experience→ Work & CTFs    │
 │ contact   → Get in touch   |
 │ cls       → Clear screen   |
 └────────────────────────────┘
