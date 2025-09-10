@@ -47,11 +47,7 @@ commands = {
 │ skills     → My skillset    
 │ experience → Work & CTFs     
 │ contact    → Get in touch   
-│ cls        → Clear screen
-│    
-│   NOTE: U CAN SCROLL UP &
-│     DOWN WITH UR CURSOR
-│       IN THE TERMINAL
+│ cls        → Clear screen    
 └────────────────────────────
 """,
 
@@ -112,7 +108,7 @@ My focus is on strengthening digital systems through advanced attack simulation 
 
    ✅ Researched & tested Browser Exploitation Framework (beEF)
    
-   ✅ Web Scraper in python using 'playwright' library and making a web page for the scraped data
+   ✅ Web Scraper in python using 'playwright' library and making a web page for the scraped data (Scroll down for more info)
    
    ✅ Made this portfolio website using flask and implemented web security features such as:  
 
