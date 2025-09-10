@@ -47,7 +47,10 @@ commands = {
 │ skills     → My skillset    
 │ experience → Work & CTFs     
 │ contact    → Get in touch   
-│ cls        → Clear screen   
+│ cls        → Clear screen
+|    
+|  NOTE: U CAN SCROLL UP &
+|    DOWN WITH UR CURSOR
 └────────────────────────────
 """,
 
