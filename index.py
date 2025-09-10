@@ -55,17 +55,18 @@ commands = {
 ╔══════════════════════════════════════════╗
 ║               🚀 ABOUT ME                ║
 ╚══════════════════════════════════════════╝
-Hello! I'm Zain Rashid, a Cybersecurity student at Air University 
-Islamabad. I specialize in Network & Web security analysis with networking
-infrastructure. My passion is uncovering vulnerabilities and strengthening digital security. 
+Hello! I'm Zain Rashid, a Cybersecurity student at Air University, Islamabad.
+I specialize in offensive security, with expertise in identifying and exploiting vulnerabilities.
+My focus is on strengthening digital systems through advanced attack simulation and defense. 
 
 🎯 Interests:
-- SIEM & SOAR
-- Network & Web Security
+- Offensive Security & Red Team Operations
+- Attack Simulation, Threat Emulation & C2 Frameworks
+- OPSEC for Stealth & ADversary Simulation
+- MITRE ATT&CK Framework Application
 - Low level Networking and automations in Python
-- Photography & Videography alongside Graphic Design
 
-⚡ Let’s secure the digital world together! ⚡
+⚡ Precision. Stealth. Resilience. ⚡
 """,
 
     "skills": """ 
@@ -73,14 +74,15 @@ infrastructure. My passion is uncovering vulnerabilities and strengthening digit
 ║         🛠️ TECHNICAL SKILLS        ║
 ╚════════════════════════════════════╝
 📌 Programming Languages:
-   - C | C++ | Python  
+   - C | C++ | Python | Javascript  
 
-📌 Cybersecurity & Networking:
+📌 Offensive Security & Networking:
    - Kali Linux | Nmap | Wireshark | BurpSuite
-   - Metasploit | beEF | BurpSuite | 
+   - Metasploit | beEF | C2 Frameworks (Mythic) | OPSEC Utils
 
 📌 Tools & Platforms:
-   - Git | AI Prompting (Mostly Grok or DeepSeek) | CursorAI IDE | Photoshop | 
+   - Git & Github | Docker | (VMware, VBox) |
+   - Obsidian
 
 📌 Soft Skills:
    - Team Player 🤝 | Effective Communicator 🗣️
@@ -104,13 +106,12 @@ infrastructure. My passion is uncovering vulnerabilities and strengthening digit
    ✅ HTTP Proxy made in python using 'mitmproxy' which is used to monitor HTTP requests and responses,
       which is then filtered and showed via a website for frontend of the logs.    
 
-   ✅ Python Process Manager using 'psutil' library
-   
    ✅ Researched & tested Browser Exploitation Framework (beEF)
    
    ✅ Web Scraper in python using 'playwright' library and making a web page for the scraped data
    
-   ✅ Made this portfolio website using flask and implemented web security features such as: 
+   ✅ Made this portfolio website using flask and implemented web security features such as:  
+
       -> CSP
       (Content Security Policy) which prevents XSS and loads what is in the self domain or the provided
       domain list and nothing else.
@@ -119,8 +120,6 @@ infrastructure. My passion is uncovering vulnerabilities and strengthening digit
       time duration to ensure there is no brute force attack or DOS attack on the website.
       
       -> White Listing for allowing known input commands in the terminal.
-    
-    ✅ Shopping Cart System (C++)
     
 💡 Always seeking challenges to refine my skills! 🚀
 """,
@@ -132,8 +131,6 @@ infrastructure. My passion is uncovering vulnerabilities and strengthening digit
 📧 Email: zain.rashid2004@gmail.com
 🔗 LinkedIn: linkedin.com/in/zainrashid04/
 🐙 GitHub: github.com/zainos-blip
-
-📌 Let’s collaborate on exciting cybersecurity projects! 🔐
 """
 }
 
